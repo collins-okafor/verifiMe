@@ -19,7 +19,12 @@ contract Upload{
 
     function allow(address user) external {
         ownership[msg.sender][user] = true;
-        accessList[msg.sender].push(Access(user, true));
-        
-    }
+        accessList[msg.sender].push(Access(user, true)); 
+    } 
+
+    function disallow(address user) external {
+        ownership[msg.sender][user] = false;
+        accessList[msg.sender].push(Access(user, true)); 
+    }    
+
 }

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 < 0.9.0;
 
@@ -28,8 +28,7 @@ contract Upload{
         }else{
             accessList[msg.sender].push(Access(user, true)); 
             previousData[msg.sender][user] = true;
-        }
-        
+        }    
     } 
 
     function disallow(address user) external {
